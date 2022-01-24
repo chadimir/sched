@@ -1,0 +1,73 @@
+* {
+  letter-spacing: .09rem;
+}
+
+.maincontainer {
+  display: flex;
+  justify-content: center;
+}
+
+.table1 {
+  border: 3px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  max-width: 800px;
+  /* font-family: 'Montserrat', sans-serif; */
+  font-family: 'Lato', sans-serif;
+  border-collapse: collapse;
+}
+
+.table1 td {
+  border: 2px solid black;  
+  /* padding: 5px; */
+}
+
+.table1 input {
+  padding: 5px;
+  /* border: 1px solid black; */
+  border: none;
+  text-align: center;
+  outline: none;
+  width: 100px;
+  /* font-family: 'Montserrat', sans-serif; */
+  font-family: 'Lato', sans-serif;
+  font-family: roboto, sans-serif;
+  font-size: 20px;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  font-weight: 100;
+  background:none;
+}
+
+.table1 tr:nth-child(even) {
+  background-color: #777;
+}
+
+.table1 input:nth-child(1) {
+  border: none;
+}
+
+/* tabledata */
+
+.tabledata {
+  display: flex;
+  flex-direction: column;
+}
+
+.tabledata input:nth-child(1) {
+  width: 133px;
+  /* margin: 10px; */
+  margin: 20px 0px;
+}
+
+.tabledata input:nth-child(2) {
+  display: none;
+  margin-bottom: -29px;
+}
+
+::placeholder {
+  color: black;
+  opacity: 1.0;
+}
+
+@media print{@page {size: landscape}}
