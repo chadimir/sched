@@ -48,6 +48,16 @@
   background-color: #999;
 }
 
+/* deleting rows */
+
+/* .table1 tr:nth-child(10),
+.table1 tr:nth-child(11),
+.table1 tr:nth-child(12),
+.table1 tr:nth-child(13) 
+{
+  display: none;
+} */
+
 .table1 input:nth-child(1) {
   border: none;
 }
