@@ -7,6 +7,8 @@
   justify-content: center;
 }
 
+/* changed border density */
+
 .table1 {
   border: 2px solid black;
   border-radius: 5px;
