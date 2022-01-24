@@ -24,10 +24,11 @@
 .table1 td {
   border: 1px solid black;  
   /* padding: 5px; */
+  height: 5rem;
 }
 
 .table1 input {
-  padding: 5px;
+  /* padding: 5px; */
   /* border: 1px solid black; */
   border: none;
   text-align: center;
@@ -66,7 +67,7 @@
 
 .tabledata input:nth-child(2) {
   /* display: none; */
-  /* margin-bottom: -29px; */
+  margin-bottom: -25px;
 }
 
 ::placeholder {
