@@ -40,7 +40,7 @@
 }
 
 .table1 tr:nth-child(even) {
-  background-color: #777;
+  background-color: #999;
 }
 
 .table1 input:nth-child(1) {
