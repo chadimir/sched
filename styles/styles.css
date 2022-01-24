@@ -73,4 +73,11 @@
   .table1 tr:nth-child(even) {
     background: transparent;
   }
+
+  .maincontainer {
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
 }
