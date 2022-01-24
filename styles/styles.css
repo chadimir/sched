@@ -19,8 +19,13 @@
   border-radius: 5px;
   padding: 5px;
   max-width: 1000px;
-  font-family: 'Lato', sans-serif;
+  /* font-family: 'Lato', sans-serif; */
   border-collapse: collapse;
+  /* background-image: url('/./assets/dog-puppy-on-garden-royalty-free-image-1586966191.png'); */
+  /* background-image: url('/./assets/cold.png'); */
+  /* background-image: url('/./assets/dogs-winter.png'); */
+  background-position: center;
+  background-size: cover;
 }
 
 .table1 td {
@@ -34,10 +39,13 @@
   outline: none;
   width: 100%;
   font-family: 'Lato', sans-serif;
+  /* font-family: 'Rubik Beastly', sans-serif; */
+  /* font-family: 'Noto Sans JP', sans-serif; */
+  /* font-family: 'Dancing Script', cursive; */
   font-size: 18px;
   text-transform: lowercase;
   font-variant: small-caps;
-  font-weight: 100;
+  font-weight: 700;
   background:none;
 }
 
