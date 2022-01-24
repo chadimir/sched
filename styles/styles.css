@@ -75,4 +75,10 @@
   opacity: 1.0;
 }
 
-@media print{@page {size: landscape}}
+@media print{
+  @page {size: landscape}
+
+  .table1 tr:nth-child(even) {
+    background: transparent;
+  }
+}
