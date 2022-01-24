@@ -65,7 +65,7 @@
 }
 
 .tabledata input:nth-child(2) {
-  display: none;
+  /* display: none; */
   margin-bottom: -29px;
 }
 
