@@ -61,12 +61,12 @@
 .tabledata input:nth-child(1) {
   width: 105px;
   /* margin: 10px; */
-  margin: 20px 0px;
+  /* margin: 20px 0px; */
 }
 
 .tabledata input:nth-child(2) {
   /* display: none; */
-  margin-bottom: -29px;
+  /* margin-bottom: -29px; */
 }
 
 ::placeholder {
