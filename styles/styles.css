@@ -75,9 +75,7 @@
   }
 
   .maincontainer {
-    height: 100vh;
-    justify-content: center;
+    height: 95vh;
     align-items: center;
-    align-content: center;
   }
 }
