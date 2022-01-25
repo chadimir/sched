@@ -115,6 +115,14 @@
   .table1 input {
     font-size: 12px;
   }
+
+  .set-form {
+    transform: rotate(90deg);
+    margin-top: 80px;
+    display: flex;
+    height: 30px;
+    width: 40px;
+   }
 }
 
 @media screen and (max-width: 550px) {
