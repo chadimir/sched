@@ -13,7 +13,7 @@
 </head>
 <body>
   <div class="maincontainer">
-    <table class="table1">
+    <table class="table1" id="myTable">
       <tr>
         <td><div class="tabledata"><input type="text" placeholder="name"></div></td>
         <td><div class="tabledata"><input type="text" placeholder="wednesday"><input type="text"></div></td>
@@ -104,47 +104,22 @@
         <td><div class="tabledata"><input type="text"><input type="text"></div></td>
         <td><div class="tabledata"><input type="text"><input type="text"></div></td>
       </tr>
-      <tr>
-        <td><div class="tabledata"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-      </tr>
-      <tr>
-        <td><div class="tabledata"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-      </tr>
-      <tr>
-        <td><div class="tabledata"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-      </tr>
-      <tr>
-        <td><div class="tabledata"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-        <td><div class="tabledata"><input type="text"><input type="text"></div></td>
-      </tr>
     </table>
+    <div class="set-form">
+      <input type="button" id="more_fields" onclick="add_fields();" value="Add Row" class="btn btn-info" />
+      <input type="button" id="less_field" onclick="remove_fields();" value="Remove Row" class="btn btn-info btn-remove">
+    </div>
   </div>
+
+  <script>
+   function add_fields() {
+  document.getElementById("myTable").insertRow(-1).innerHTML =
+    '<tr><td><div class="tabledata"><input type="text"></div></td><td><div class="tabledata"><input type="text"><input type="text"></div></td><td><div class="tabledata"><input type="text"><input type="text"></div></td><td><div class="tabledata"><input type="text"><input type="text"></div></td><td><div class="tabledata"><input type="text"><input type="text"></div></td><td><div class="tabledata"><input type="text"><input type="text"></div></td><td><div class="tabledata"><input type="text"><input type="text"></div></td><td><div class="tabledata"><input type="text"><input type="text"></div></td></tr>';
+}
+
+  function remove_fields() {
+    document.getElementById("myTable").deleteRow(-1);
+  }
+  </script>
 </body>
 </html>
