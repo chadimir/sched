@@ -71,7 +71,7 @@
 /* Form Controls */
 
 .btn-info {
-  background: #04adef;
+  background: #2196F3;
   border: none;
   border-radius: 8px;
   padding: 5px;
@@ -82,7 +82,7 @@
 }
 
 .btn-remove {
-  background: red;
+  background: #c62828;
 }
 
 .set-form {
@@ -92,14 +92,25 @@
   max-height: 70px;
 }
 
+.print--btn {
+  padding: 5px 20px;
+  margin-top: 20px;
+  /* background: #39c191; */
+  background: #20f3e5;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
 /* Media Controls */
 
 @media print {
   @page {size: landscape}
 
-  .table1 tr:nth-child(even) {
+  /* .table1 tr:nth-child(even) {
     background: transparent;
-  }
+  } */
 
   .maincontainer {
     height: 95vh;
