@@ -5,9 +5,7 @@
 .maincontainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  /* height: 95vh; */
 }
 
 .spacer--box {
@@ -117,21 +115,14 @@
 @media print {
   @page {size: landscape}
 
-  /* .table1 tr:nth-child(even) {
-    background: transparent;
-  } */
-
   .maincontainer {
     height: 95vh;
     align-items: center;
+    justify-content: center;
   }
 
   .set-form {
     display: none;
-  }
-
-  .spacer--box {
-    display; none;
   }
 }
 
