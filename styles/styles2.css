@@ -1,4 +1,10 @@
 .header--hero {
   margin: auto;
   text-shadow: 2px 2px 8px #999;
+  text-align: center;
+}
+
+.link-nav a {
+  text-decoration: none;
+  color: #2096f3;
 }
