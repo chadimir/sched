@@ -7,6 +7,7 @@
   <title>Schedules</title>
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="stylesheet" href="styles/default.css">
+  <script src="javascript/jscript.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Rubik+Beastly&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -107,29 +108,14 @@
         <td><div class="tabledata"><input type="text"><input type="text"></div></td>
       </tr>
     </table>
-    <div class="set-form">
-      <input type="button" id="more_fields" onclick="add_fields();" value="Add Row" class="btn btn-info" />
-      <input type="button" id="less_field" onclick="remove_fields();" value="Remove Row" class="btn btn-info btn-remove">
-      <button onclick="printFunction()" class="btn-info print--btn">Print</button>
-    </div>
+  </div>
+  <div class="set-form">
+    <input type="button" id="more_fields" onclick="add_fields();" value="Add Row" class="btn btn-info" />
+    <input type="button" id="less_field" onclick="remove_fields();" value="Remove Row" class="btn btn-info btn-remove">
+    <button onclick="printFunction()" class="btn-info print--btn">Print</button>
   </div>
   <!-- <div class="set-form">
     <button onclick="printFunction()" class="print--btn">Print</button>
   </div> -->
-
-  <script>
-   function add_fields() {
-  document.getElementById("myTable").insertRow(-1).innerHTML =
-    '<tr><td><div class="tabledata"><input type="text"></div></td><td><div class="tabledata"><input type="text"><input type="text"></div></td><td><div class="tabledata"><input type="text"><input type="text"></div></td><td><div class="tabledata"><input type="text"><input type="text"></div></td><td><div class="tabledata"><input type="text"><input type="text"></div></td><td><div class="tabledata"><input type="text"><input type="text"></div></td><td><div class="tabledata"><input type="text"><input type="text"></div></td><td><div class="tabledata"><input type="text"><input type="text"></div></td></tr>';
-}
-
-  function remove_fields() {
-    document.getElementById("myTable").deleteRow(-1);
-  }
-
-  function printFunction() {
-    window.print();
-  }
-  </script>
 </body>
 </html>
