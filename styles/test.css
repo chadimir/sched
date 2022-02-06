@@ -10,9 +10,17 @@ body {
 .container {
   height: 100%;
   width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
   justify-content: center;
   align-items: center;
   display: flex;
+  animation-name: opacityOn;
+  animation-duration: 30s;
+  animation-delay: 0;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
 }
 .text {
   font-weight: 100;
@@ -29,4 +37,21 @@ body {
 }
 .dud {
   color: #757575;
+}
+
+@keyframes opacityOn {
+  0% {
+      opacity: 0;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+  100% {
+      opacity: 1;
+   }
 }
