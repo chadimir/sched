@@ -112,7 +112,11 @@
 
 .btn-clist {
   background-color: #999;
+}
+
+.btn-clist a {
   color: white;
+  text-decoration: none;
 }
 
 /* Checklist link */
