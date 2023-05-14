@@ -110,6 +110,13 @@
   margin-left: 5px;
 }
 
+.btn-clist {
+  background-color: #999;
+  color: white;
+}
+
+/* Checklist link */
+
 /* Media Controls */
 
 @media print {

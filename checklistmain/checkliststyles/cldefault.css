@@ -1,0 +1,80 @@
+:root {
+  --size-10: 0.625rem;
+  --size-12: 0.75rem;
+  --size-14: 0.875rem;
+  --size-16: 1rem;
+  --size-18: 1.125rem;
+  --size-20: 1.25rem;
+  --size-30: 1.875rem;
+  --size-40: 2.5rem;
+  --size-50: 3.125rem;
+  --size-60: 3.75rem;
+  --size-70: 4.375rem;
+  --size-80: 5rem;
+  --size-90: 5.625rem;
+  --size-100: 6.25rem;
+  --size-150: 9.375rem;
+  --size-200: 12.5rem;
+  --size-250: 15.625rem;
+  --size-300: 18.75rem;
+  --size-400: 25rem;
+  --size-500: 31.25rem;
+  --white: #fff;
+  --black: #000;
+  --btn-color: #477ef7;
+  --grey: #f7fafe;
+  --header-bg: #f7f8fa;
+  --form-bg: #21335b;
+
+  --font-g-1: #88ce5f;
+  --font-g-2: #f0e3f6;
+  --font-g-3: #e4f1ad;
+  --font-g-4: #002985;
+  --font-g-5: #e5eaf6;
+  --font-p-1: #0a1192;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+h1, h2 { text-align: center; }
+
+h1 { margin: 0; }
+
+h2 { margin-top: 0; }
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.checkbox {
+  border: 1px solid black;
+  height: 10px;
+  width: 10px;
+  margin-left: auto;
+}
+
+@media print {
+  .envelope {
+    border: none;
+  }
+}

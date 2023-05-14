@@ -1,0 +1,99 @@
+#table-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: baseline;
+  width: max-content;
+  margin: 0 auto;
+}
+
+/* Table Data */
+table {
+  width: 350px;
+  margin: 8px 0;
+  height: fit-content;
+}
+
+th { text-align: left; }
+
+td {
+  display: flex;
+  align-items: center;
+}
+
+tr:nth-child(even) { background-color: lightgrey; }
+
+span {
+  max-width: 300px;
+  min-width: 300px;
+  font-size: 12px;
+  font-weight: 200;
+}
+
+span:focus-visible {
+  outline: 1px dashed black;
+}
+  
+/* Focusing the button with a mouse, touch, or stylus will show a subtle drop shadow. */
+span:focus:not(:focus-visible) {
+  outline-color: transparent;
+  box-shadow: 1px 1px 5px rgba(1, 1, 0, .7);
+}
+
+/* Input Fields */
+
+input[type=text] {
+  background-color: transparent;
+  border: none;
+}
+
+tr:nth-child(1) input {
+  font-size: 20px;
+}
+
+.button_container {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 0 10px;
+  width: 100lvw;
+}
+
+.button_container button {
+  padding: 5px 20px;
+  font-size: 30px;
+  border: transparent;
+  border-radius: 5px;
+  background-color: var(--font-g-2);
+  word-break: keep-all;
+  max-width: min-content;
+  color: var(--font-g-4);
+}
+
+.button_container button:hover {
+  background-color: var(--font-p-1);
+  color: var(--font-g-5);
+}
+
+h1 input {
+  font-size: 32px;
+  text-align: center;
+  width: 800px;
+}
+
+h2 input {
+  font-size: 24px;
+  text-align: center;
+  width: 800px;
+}
+
+h1 input,
+h2 input,
+tr:nth-child(1) input {
+  font-weight: 900;
+}
+
+tr:nth-child(1) input { 
+  text-align: center; 
+  width: 100%;
+}

@@ -1,0 +1,27 @@
+@media (min-width: 1200px) {
+  .container { max-width: 1140px; }
+}
+
+@media print {
+  .set-form {
+    display: none;
+  }
+
+  .set-form-2 {
+    display: none;
+  }
+
+  .button_container {
+    display: none;
+  }
+
+  table tbody tr:nth-child(1) td button {
+    display: none;
+  }
+
+  tr:nth-child(1) input { text-align: center; }
+
+  ::-webkit-input-placeholder {
+    color: transparent;
+  }
+}
