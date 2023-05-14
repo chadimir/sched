@@ -21,6 +21,11 @@
 
   tr:nth-child(1) input { text-align: center; }
 
+  @page {
+    size: auto;
+    margin: 0mm;
+  }
+  
   ::-webkit-input-placeholder {
     color: transparent;
   }
