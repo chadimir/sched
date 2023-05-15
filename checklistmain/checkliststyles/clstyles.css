@@ -32,6 +32,25 @@ span {
 span:focus-visible {
   outline: 1px dashed black;
 }
+
+tr:nth-child(1) button {
+  padding: 2px 4px;
+  font-size: 8px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: white;
+  background-color: var(--font-g-1);
+}
+
+tr:nth-child(1) button:hover,
+tr:nth-child(1) button:focus {
+  background-color: var(--font-g-2);
+  border: 1px solid var(--font-p-1);
+  color: var(--font-g-4);
+  outline: none;
+}
+
+tr:nth-child(1) button:nth-child(3) { margin-left: 5px; }
   
 /* Focusing the button with a mouse, touch, or stylus will show a subtle drop shadow. */
 span:focus:not(:focus-visible) {
