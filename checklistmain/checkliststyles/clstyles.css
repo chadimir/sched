@@ -116,3 +116,11 @@ tr:nth-child(1) input {
   text-align: center; 
   width: 100%;
 }
+
+/* waste sheet */
+
+.pdf-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
