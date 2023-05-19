@@ -133,7 +133,7 @@ tr:nth-child(1) input {
   color: #fff;
 }
 
-.pdf-wrap button {
+.pdf-wrap a button {
   background-color: var(--btn-color);
   border: 1px solid transparent;
   border-radius: 5px;
