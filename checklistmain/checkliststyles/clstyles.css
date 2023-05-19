@@ -119,7 +119,7 @@ tr:nth-child(1) input {
 
 /* waste sheet */
 
-.pdf-wrap {
+/* .pdf-wrap {
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -146,4 +146,4 @@ tr:nth-child(1) input {
 .pdf-wrap button:hover {
   border: 3px solid black;
   cursor: pointer;
-}
+} */
