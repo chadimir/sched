@@ -24,4 +24,15 @@
   ::-webkit-input-placeholder {
     color: transparent;
   }
+
+  #table-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 1000px;
+    height: 900px;
+    margin: 0 auto;
+  }
 }
