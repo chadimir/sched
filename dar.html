@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculate Means and Sums</title>
+  <style>
+    /* Add style for the results table in the new window */
+    body.result-window {
+      padding: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      border: 2px solid black;
+      width: 100%;
+    }
+
+    th, td {
+      border: 2px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    body {
+      display: grid;
+      width: 400px;
+    }
+
+    p {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Input fields for user data -->
+<label for="inputValues1">Enter numerical values for OEPE (comma-separated): </label>
+<input type="text" id="inputValues1" placeholder="e.g., 1, 2, 3, 4">
+
+<!-- Additional inputs for sum calculation -->
+<label for="inputValues2">Enter numerical values for DT GC Last Year (comma-separated): </label>
+<input type="text" id="inputValues2" placeholder="e.g., 1, 2, 3, 4">
+
+<label for="inputValues3">Enter numerical values for DT GC Today (comma-separated): </label>
+<input type="text" id="inputValues3" placeholder="e.g., 1, 2, 3, 4">
+
+<label for="inputValues4">Enter numerical values for Parked Cars (comma-separated): </label>
+<input type="text" id="inputValues4" placeholder="e.g., 1, 2, 3, 4">
+
+<label for="inputValues5">Enter numerical values for R2P (comma-separated): </label>
+<input type="text" id="inputValues5" placeholder="e.g., 1, 2, 3, 4">
+
+<label for="inputValues6">Enter numerical values for KVS (comma-separated): </label>
+<input type="text" id="inputValues6" placeholder="e.g., 1, 2, 3, 4">
+
+<label for="inputValues7">Enter numerical values for Labor (comma-separated): </label>
+<input type="text" id="inputValues7" placeholder="e.g., 1, 2, 3, 4">
+
+<!-- Additional inputs -->
+<label for="inputValues8">Enter numerical values for Side 2 (comma-separated): </label>
+<input type="text" id="inputValues8" placeholder="e.g., 1, 2, 3, 4">
+
+<label for="inputValues9">Enter numerical values for VOICE MTD (comma-separated): </label>
+<input type="text" id="inputValues9" placeholder="e.g., 1, 2, 3, 4">
+
+<!-- Additional input for custom text -->
+<label for="additionalInput">Manager: </label>
+<input type="text" id="additionalInput" placeholder="e.g., Custom Text">
+
+<!-- Button to trigger mean and sum calculation -->
+<button onclick="calculate()">Calculate</button>
+
+<script>
+  // Function to calculate the mean of an array
+  function calculateMean(data) {
+    return data.reduce((acc, value) => acc + value, 0) / data.length;
+  }
+
+  // Function to calculate the sum of an array
+  function calculateSum(data) {
+    return data.reduce((acc, value) => acc + value, 0);
+  }
+
+  // Function to handle button click and calculate means and sums
+  function calculate() {
+    // Array to store input IDs
+    const inputIds = ['inputValues1', 'inputValues2', 'inputValues3', 'inputValues4', 'inputValues5', 'inputValues6', 'inputValues7', 'inputValues8', 'inputValues9'];
+
+    // Array to store results
+    const results = [];
+
+    // Calculate mean or sum for each input
+    inputIds.forEach((inputId, index) => {
+      const userInput = document.getElementById(inputId).value;
+      const inputData = userInput.split(',').map(value => parseFloat(value.trim()));
+
+      // Check if the input is valid
+      if (inputData.some(isNaN)) {
+        const inputNames = ['OEPE', 'DT GC Last Year', 'DT GC Today', 'Parked Cars', 'R2P', 'KVS', 'Labor', 'Side 2', 'VOICE MTD'];
+        const inputName = inputNames[index];
+        alert(`Please enter valid numerical values for ${inputName}.`);
+        return;
+      }
+
+      // Calculate the mean or sum of the user input
+      const result = (index === 4) ? calculateMean(inputData).toFixed(2) : (index === 9) ? calculateMean(inputData).toFixed(2) + '%' : calculateSum(inputData).toFixed(2);
+      results.push(result);
+    });
+
+    // Get additional text input
+    const additionalText = document.getElementById('additionalInput').value;
+
+    // Open a new window to display the results in a table
+    const resultWindow = window.open('', '_blank');
+    resultWindow.document.write('<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Results</title></head><style>td { border: 2px solid black; padding: 5px 10px; } td:nth-child(2) { text-align: center; } table { border-collapse: collapse; }</style><body class="result-window">');
+
+
+    // Display the results in a table
+    resultWindow.document.write('<table>');
+    resultWindow.document.write('<thead><tr><th>Input</th><th>Result</th></tr></thead><tbody>');
+
+    // Display results for numerical inputs
+    results.forEach((result, index) => {
+      const inputNames = ['OEPE', 'DT GC Last Year', 'DT GC Today', 'Parked Cars', 'R2P', 'KVS', 'Labor', 'Side 2', 'VOICE MTD'];
+      
+      // Add "%" sign after the results of "VOICE MTD"
+      const resultWithPercent = (index === 9) ? `${result}%` : result;
+      
+      resultWindow.document.write(`<tr><td>${inputNames[index]}</td><td>${resultWithPercent}</td></tr>`);
+    });
+
+    // Display additional text input
+    resultWindow.document.write(`<tr><td>Manager</td><td>${additionalText}</td></tr>`);
+
+    resultWindow.document.write('</tbody></table>');
+
+    // Close the document for proper rendering
+    resultWindow.document.close();
+  }
+</script>
+
+</body>
+</html>
+
+
+
+
+
