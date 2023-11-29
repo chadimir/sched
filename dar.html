@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js"></script>
   <title>Calculate Means and Sums</title>
   <style>
     /* Add style for the results table in the new window */
@@ -36,11 +37,11 @@
 
 <!-- Input fields for user data -->
 <label for="inputValues1">Enter numerical values for OEPE (comma-separated): </label>
-<input type="text" id="inputValues1" placeholder="e.g., 1, 2, 3, 4" inputmode="decimal" pattern="[0-9,]*">
+<input type="text" id="inputValues1" placeholder="e.g., 1, 2, 3, 4">
 
 <!-- Additional inputs for sum calculation -->
 <label for="inputValues2">Enter numerical values for DT GC Last Year (comma-separated): </label>
-<input type="text" id="inputValues2" placeholder="e.g., 1, 2, 3, 4" pattern="[0-9,]*">
+<input type="text" id="inputValues2" placeholder="e.g., 1, 2, 3, 4">
 
 <label for="inputValues3">Enter numerical values for DT GC Today (comma-separated): </label>
 <input type="text" id="inputValues3" placeholder="e.g., 1, 2, 3, 4" inputmode="tel" pattern="^[0-9,]*$">
@@ -72,6 +73,10 @@
 <button onclick="calculate()">Calculate</button>
 
 <script>
+  // Initialize Cleave.js on the specified input fields
+  new Cleave('#inputValues1', { numeral: true, numeralThousandsGroupStyle: 'thousand' });
+  new Cleave('#inputValues2', { numeral: true, numeralThousandsGroupStyle: 'thousand' });
+
   // Function to calculate the mean of an array
   function calculateMean(data) {
     return data.reduce((acc, value) => acc + value, 0) / data.length;
