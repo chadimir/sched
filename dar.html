@@ -157,7 +157,9 @@
     const tableHeaderTitle = document.getElementById('tableHeaderTitle').value;
 
     // Get the current date
-    const currentDate = new Date().toLocaleDateString();
+    const currentDateTime = new Date();
+    const currentDate = currentDateTime.toLocaleDateString();
+    const currentTime = currentDateTime.toLocaleTimeString();
 
     // Open a new window to display the results in a table
     const resultWindow = window.open('', '_blank');
@@ -168,7 +170,8 @@
     resultWindow.document.write(`<h2>${tableTitle} Patch</h2>`);
 
     // Display the current date
-    resultWindow.document.write(`<p>Date: ${currentDate}</p>`);
+    resultWindow.document.write(`<p>${currentDate}</p>`);
+    resultWindow.document.write(`<p>${currentTime}</p>`);
 
         // Display the results in a table with the header title
     // resultWindow.document.write('<table>');
