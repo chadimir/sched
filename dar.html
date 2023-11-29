@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/jquery.inputmask.min.js"></script>
   <title>Calculate Means and Sums</title>
   <style>
     /* Add style for the results table in the new window */
@@ -73,9 +74,26 @@
 <button onclick="calculate()">Calculate</button>
 
 <script>
-  // Initialize Cleave.js on the specified input fields
-  new Cleave('#inputValues1', { numeral: true, numeralThousandsGroupStyle: 'thousand' });
-  new Cleave('#inputValues2', { numeral: true, numeralThousandsGroupStyle: 'thousand' });
+  // Apply input masks to format input with commas
+  $(document).ready(function(){
+    $('#inputValues1').inputmask({
+      alias: 'numeric',
+      groupSeparator: ',',
+      autoGroup: true,
+      digits: 2,
+      digitsOptional: false,
+      placeholder: '0',
+    });
+
+    $('#inputValues2').inputmask({
+      alias: 'numeric',
+      groupSeparator: ',',
+      autoGroup: true,
+      digits: 2,
+      digitsOptional: false,
+      placeholder: '0',
+    });
+  });
 
   // Function to calculate the mean of an array
   function calculateMean(data) {
