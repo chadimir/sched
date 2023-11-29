@@ -3,8 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/jquery.inputmask.min.js"></script>
   <title>Calculate Means and Sums</title>
   <style>
     /* Add style for the results table in the new window */
@@ -38,7 +36,7 @@
 
 <!-- Input fields for user data -->
 <label for="inputValues1">Enter numerical values for OEPE (comma-separated): </label>
-<input type="text" id="inputValues1" placeholder="e.g., 1, 2, 3, 4">
+<input type="number" id="inputValues1" placeholder="e.g., 1, 2, 3, 4">
 
 <!-- Additional inputs for sum calculation -->
 <label for="inputValues2">Enter numerical values for DT GC Last Year (comma-separated): </label>
@@ -74,26 +72,6 @@
 <button onclick="calculate()">Calculate</button>
 
 <script>
-  // Apply input masks to format input with commas
-  $(document).ready(function(){
-    $('#inputValues1').inputmask({
-      alias: 'numeric',
-      groupSeparator: ',',
-      autoGroup: true,
-      digits: 2,
-      digitsOptional: false,
-      placeholder: '0',
-    });
-
-    $('#inputValues2').inputmask({
-      alias: 'numeric',
-      groupSeparator: ',',
-      autoGroup: true,
-      digits: 2,
-      digitsOptional: false,
-      placeholder: '0',
-    });
-  });
 
   // Function to calculate the mean of an array
   function calculateMean(data) {
