@@ -49,9 +49,25 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function handleZoomEnd() {
-    // Code to handle the end of zooming
-    // You can implement actions such as resizing or repositioning the keypad here
+    const zoomFactor = window.innerWidth / window.outerWidth;
+  
+    // Adjust the size of the keypad based on the zoom factor and desired percentage
+    const desiredPercentage = 20; // Set the desired percentage
+    const keypadSize = (desiredPercentage / 100) * window.innerWidth * zoomFactor;
+  
+    // Set the size of the keypad container
+    floatingKeypad.style.width = `${keypadSize}px`;
+    floatingKeypad.style.height = `${keypadSize}px`;
+  
+    // You can also adjust other styles like font size if needed
+    const keypadButtons = document.querySelectorAll('#floatingKeypad button');
+    const adjustedButtonFontSize = 16 * zoomFactor;
+  
+    keypadButtons.forEach(button => {
+      button.style.fontSize = `${adjustedButtonFontSize}px`;
+    });
   }
+  
 
   // Event listeners for input focus and blur
   customInput.addEventListener('focus', () => showFloatingKeypad('customInput'));
