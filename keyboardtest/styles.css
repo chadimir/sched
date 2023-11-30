@@ -13,7 +13,7 @@
 
 #customKeypad button {
   padding: 2vw;
-  font-size: 2vw; /* Adjust font size based on viewport width */
+  font-size: 5vw; /* Adjust font size based on viewport width */
   text-align: center;
   cursor: pointer;
   width: 100%;
