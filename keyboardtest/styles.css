@@ -1,20 +1,14 @@
-#customInput {
-  font-size: 4vw; /* Use viewport width units for font size */
-  padding: 2vw;
-  text-align: center;
-}
-
 .custom-keypad {
   display: none;
   position: fixed;
-  grid-template-columns: repeat(3, 6vw);
+  grid-template-columns: repeat(3, auto);
   bottom: 0;
-  left: 40%;
+  left: 0;
+  width: 100vw;
   z-index: 1000;
   height: auto;
   background-color: #f0f0f0;
   box-sizing: border-box;
-  justify-content: center;
 }
 
 #customKeypad button {
@@ -22,6 +16,7 @@
   font-size: 1vw; /* Adjust font size based on viewport width */
   text-align: center;
   cursor: pointer;
+  width: 100%;
 }
 
 /* Clear margin for the last button in each row */
