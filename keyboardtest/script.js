@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const customInput = document.getElementById('customInput');
   const floatingKeypad = document.getElementById('floatingKeypad');
   let currentInputId; // Keep track of the current input
+  let lastDevicePixelRatio = window.devicePixelRatio;
+  let timeoutId;
 
   function showFloatingKeypad(inputId) {
     currentInputId = inputId;
@@ -34,13 +36,29 @@ document.addEventListener('DOMContentLoaded', function () {
     floatingKeypad.style.top = `${floatingKeypadTop}px`;
   }
 
+  function handleResize() {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      const newDevicePixelRatio = window.devicePixelRatio;
+      if (newDevicePixelRatio !== lastDevicePixelRatio) {
+        lastDevicePixelRatio = newDevicePixelRatio;
+        handleZoomEnd();
+      }
+      adjustKeypadPosition();
+    }, 200); // Adjust the delay as needed
+  }
+
+  function handleZoomEnd() {
+    // Code to handle the end of zooming
+    // You can implement actions such as resizing or repositioning the keypad here
+  }
+
   // Event listeners for input focus and blur
   customInput.addEventListener('focus', () => showFloatingKeypad('customInput'));
   customInput.addEventListener('blur', hideFloatingKeypad);
 
-  // Event listeners for window resize and scroll
-  window.addEventListener('resize', adjustKeypadPosition);
-  window.addEventListener('scroll', adjustKeypadPosition);
+  // Event listener for window resize
+  window.addEventListener('resize', handleResize);
 
   // Event listeners for keypad buttons
   const buttons = document.querySelectorAll('#floatingKeypad button');

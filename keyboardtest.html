@@ -13,7 +13,7 @@
     .floating-keypad {
       display: grid;
       grid-template-columns: repeat(3, 1fr); /* Three columns in the grid */
-      grid-template-rows: repeat(1fr, auto);
+      /* grid-template-rows: repeat(1fr, auto); */
       grid-gap: 2vw; /* Adjust the gap between grid items */
       background-color: #f0f0f0;
       padding: 2vw; /* Adjust padding as needed */
@@ -22,6 +22,7 @@
       bottom: 0;
       left: 0;
       width: 100vw;
+      height: auto;
       z-index: 1000; /* Ensure it appears above other elements */
     }
 
