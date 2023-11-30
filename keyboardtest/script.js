@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const floatingKeypad = document.getElementById('floatingKeypad');
   let currentInputId; // Keep track of the current input
   let lastDevicePixelRatio = window.devicePixelRatio;
-  let timeoutId;
+  let lastTouchDistance;
 
   function showFloatingKeypad(inputId) {
     currentInputId = inputId;
@@ -37,37 +37,54 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function handleResize() {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => {
-      const newDevicePixelRatio = window.devicePixelRatio;
-      if (newDevicePixelRatio !== lastDevicePixelRatio) {
-        lastDevicePixelRatio = newDevicePixelRatio;
-        handleZoomEnd();
-      }
-      adjustKeypadPosition();
-    }, 200); // Adjust the delay as needed
+    const newDevicePixelRatio = window.devicePixelRatio;
+    if (newDevicePixelRatio !== lastDevicePixelRatio) {
+      lastDevicePixelRatio = newDevicePixelRatio;
+      handleZoomEnd();
+    }
+    adjustKeypadPosition();
   }
 
-  function handleZoomEnd() {
-    const zoomFactor = window.innerWidth / window.outerWidth;
-  
-    // Adjust the size of the keypad based on the zoom factor and desired percentage
-    const desiredPercentage = 20; // Set the desired percentage
+  function handlePinch(event) {
+    const touch1 = event.touches[0];
+    const touch2 = event.touches[1];
+
+    if (touch1 && touch2) {
+      const currentTouchDistance = Math.hypot(
+        touch1.clientX - touch2.clientX,
+        touch1.clientY - touch2.clientY
+      );
+
+      if (lastTouchDistance) {
+        const zoomFactor = currentTouchDistance / lastTouchDistance;
+        adjustKeypadOnPinch(zoomFactor);
+      }
+
+      lastTouchDistance = currentTouchDistance;
+    }
+  }
+
+  function handlePinchEnd() {
+    lastTouchDistance = undefined;
+  }
+
+  function adjustKeypadOnPinch(zoomFactor) {
+    // Adjust the size of the keypad based on the pinch gesture
+    const desiredPercentage = 50; // Set the desired percentage
     const keypadSize = (desiredPercentage / 100) * window.innerWidth * zoomFactor;
-  
+
     // Set the size of the keypad container
     floatingKeypad.style.width = `${keypadSize}px`;
     floatingKeypad.style.height = `${keypadSize}px`;
-  
+
     // You can also adjust other styles like font size if needed
     const keypadButtons = document.querySelectorAll('#floatingKeypad button');
     const adjustedButtonFontSize = 16 * zoomFactor;
-  
+
     keypadButtons.forEach(button => {
       button.style.fontSize = `${adjustedButtonFontSize}px`;
     });
   }
-  
 
   // Event listeners for input focus and blur
   customInput.addEventListener('focus', () => showFloatingKeypad('customInput'));
@@ -75,6 +92,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Event listener for window resize
   window.addEventListener('resize', handleResize);
+
+  // Event listeners for touch events
+  document.addEventListener('touchstart', handlePinch);
+  document.addEventListener('touchmove', handlePinch);
+  document.addEventListener('touchend', handlePinchEnd);
 
   // Event listeners for keypad buttons
   const buttons = document.querySelectorAll('#floatingKeypad button');
