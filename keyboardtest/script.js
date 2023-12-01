@@ -42,6 +42,20 @@ document.addEventListener('DOMContentLoaded', function () {
       }
   }
 
+  function focusPreviousInput() {
+    const currentInputIndex = parseInt(currentInputId.replace('inputValues', ''));
+    const previousInputId = 'inputValues' + (currentInputIndex - 1);
+    const previousInput = document.getElementById(previousInputId);
+
+    if (previousInput) {
+      hideCustomKeypad();
+      previousInput.focus();
+      showCustomKeypad(previousInputId);
+    } else {
+      hideCustomKeypad();
+    }
+  }
+
   inputValues1.addEventListener('focus', () => showCustomKeypad('inputValues1'));
   inputValues2.addEventListener('focus', () => showCustomKeypad('inputValues2'));
   inputValues3.addEventListener('focus', () => showCustomKeypad('inputValues3'));
@@ -72,6 +86,8 @@ document.addEventListener('DOMContentLoaded', function () {
               backspace();
           } else if (buttonText === 'Next') {
               focusNextInput();
+          } else if (buttonText === 'Prev') {
+            focusPreviousInput();
           } else {
               appendToInput(buttonText);
           }
