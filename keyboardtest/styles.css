@@ -11,6 +11,10 @@
   box-sizing: border-box;
 }
 
+input {
+  width: max-content;
+}
+
 #customKeypad button {
   padding: 2vw;
   font-size: 5vw; /* Adjust font size based on viewport width */
