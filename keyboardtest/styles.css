@@ -29,6 +29,12 @@ input {
 } */
 
 /* Style to make the keypad look like a calculator */
+select {
+  height: 40px;
+  width: 100%;
+  font-size: 20px;
+}
+
 button {
   border: 1px solid #ccc;
   background-color: #fff;
