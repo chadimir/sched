@@ -88,6 +88,7 @@ h3 {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  width: 180px;
 }
 
 .button-one span:first-child {
